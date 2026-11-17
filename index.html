@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Strzelanka pod Magazynami 3D</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div id="auth" class="panel">
+    <h1>STRZELANKA<br><span>POD MAGAZYNAMI 3D</span></h1>
+
+    <input id="nick" maxlength="16" placeholder="Nick">
+    <input id="password" type="password" placeholder="Hasło">
+
+    <div class="buttons">
+      <button id="login">ZALOGUJ</button>
+      <button id="register" class="secondary">UTWÓRZ KONTO</button>
+    </div>
+
+    <p id="authMessage">Załóż konto lub zaloguj się.</p>
+  </div>
+
+  <div id="game" hidden>
+    <div id="hud">
+      <div>
+        <b id="hudNick">Gracz</b><br>
+        Życie: <span id="hp">100</span>
+      </div>
+
+      <div>Monety: <b id="coins">0</b></div>
+      <div>Pokonani: <b id="kills">0</b></div>
+    </div>
+
+    <div id="help">
+      WASD – chodzenie · Mysz – kamera · Klik – strzał · Spacja – skok
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <div id="mobileControls">
+      <div id="stick">
+        <div id="knob"></div>
+      </div>
+
+      <button id="fire">STRZAŁ</button>
+      <button id="jump">SKOK</button>
+    </div>
+
+    <div id="notice"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="client.js"></script>
+
+</body>
+</html>
