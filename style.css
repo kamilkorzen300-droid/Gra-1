@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+#auth {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 390px);
+  padding: 26px;
+  background: #171d27;
+  border: 1px solid #45546b;
+  border-radius: 16px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 27px;
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+h1 span {
+  color: #68b7ff;
+  font-size: 19px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 7px 0;
+  border: 1px solid #536176;
+  border-radius: 8px;
+  background: #0d121a;
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: #1676d2;
+  color: white;
+  padding: 13px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+.secondary {
+  background: #39475b;
+}
+
+#authMessage {
+  min-height: 20px;
+  color: #ffd36a;
+  font-size: 13px;
+}
+
+#hud {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  background: #101820b8;
+  padding: 10px 13px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+#help {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  background: #111b;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+#crosshair {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  pointer-events: none;
+}
+
+#mobileControls {
+  display: none;
+  position: absolute;
+  bottom: 25px;
+  left: 18px;
+  right: 18px;
+  align-items: end;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+#stick {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: #ffffff35;
+  border: 2px solid #ffffff88;
+  position: relative;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+#knob {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 31px;
+  top: 31px;
+  border-radius: 50%;
+  background: #dcecffbb;
+}
+
+#fire, #jump {
+  pointer-events: auto;
+  border-radius: 50%;
+  width: 76px;
+  height: 76px;
+  background: #d54a37dd;
+  border: 2px solid white;
+  font-size: 12px;
+}
+
+#jump {
+  background: #287ecddd;
+  width: 62px;
+  height: 62px;
+}
+
+#notice {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+@media (pointer: coarse) {
+  #mobileControls {
+    display: flex;
+  }
+
+  #help {
+    display: none;
+  }
+}
